@@ -1,0 +1,43 @@
+name: Bug report
+description: Something returned wrong data, failed, or behaved unexpectedly
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: >
+        Issues are public. Leave out tokens, client secrets and anything from your credentials
+        file, and replace health data (scores, dates, heart rates) with made-up values.
+        Report security problems privately instead: see SECURITY.md.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: The tool, its arguments, and what came back.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Output of `mcp-oura --version`
+    validations:
+      required: true
+  - type: input
+    id: client
+    attributes:
+      label: MCP client and OS
+      placeholder: Claude Desktop 1.x on macOS 26
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: >
+        Optional. What `mcp-oura` prints when you run it in a terminal, or your MCP client's log
+        for the server, with tokens and health data removed.
+      render: text
